@@ -262,16 +262,15 @@ public class NegociosService {
 
                 if (c instanceof Mayorista) {
                     Mayorista m = (Mayorista) c;
-                    //res += "\n ID NOMBRE  RAZON SOCIAL  CIF   TIPO  DESCUENTO" + "\n" + m.getIdCliente() + "   " + m.getNombre() + "   " + m.getRazonSocial() + "   " + m.getCif() + "   " + m.getTipoMayorista() + "   " + m.getDescuento();
-                    res += "\n ID NOMBRE  RAZON SOCIAL  CIF   TIPO  DESCUENTO" + "\n" + String.format(Integer.toString(m.getIdCliente()), m.getNombre(), m.getRazonSocial(), m.getCif(), m.getTipoMayorista(), m.getDescuento());
+                    res += "\n ID NOMBRE  RAZON SOCIAL  CIF   TIPO  DESCUENTO" + "\n" + m.getIdCliente() + "   " + m.getNombre() + "   " + m.getRazonSocial() + "   " + m.getCif() + "   " + m.getTipoMayorista() + "   " + m.getDescuento();
+                    //res += String.format("\n ID NOMBRE  RAZON SOCIAL  CIF   TIPO  DESCUENTO" + "\n" + Integer.toString(m.getIdCliente()), m.getNombre(), m.getRazonSocial(), m.getCif(), m.getTipoMayorista(), m.getDescuento());
 
                 }
                 if (c instanceof Particular) {
                     Particular p = (Particular) c;
-                    //res += "\n ID NOMBRE  RAZON SOCIAL  DNI" + "\n" + p.getIdCliente() + "   " + p.getNombre() + "      " + p.getRazonSocial() + "   " + p.getDni();
-                    String formato = String.format(Integer.toString(p.getIdCliente()), p.getNombre(), p.getRazonSocial(), p.getDni());
-                    res += String.format("\n ID NOMBRE  RAZON SOCIAL  DNI" + "\n",Integer.toString(p.getIdCliente(), p.getNombre(), p.getRazonSocial(), p.getDni());
-                    
+                    res += "\n ID NOMBRE  RAZON SOCIAL  DNI" + "\n" + p.getIdCliente() + "   " + p.getNombre() + "      " + p.getRazonSocial() + "   " + p.getDni();
+                    //res += String.format("\n ID NOMBRE  RAZON SOCIAL  DNI" + "\n" + Integer.toString(p.getIdCliente()), p.getNombre(), p.getRazonSocial(), p.getDni());
+
                 }
             }
         }
@@ -285,10 +284,10 @@ public class NegociosService {
 
         } else {
             for (Venta v : ventas) {
-                //res += "\n ID VENTA VENDEDOR  CLIENTE PRODUCTO PRECIO VENTA" + "\n" + v.getIdVenta() + "   " + v.getVendedor() + "   " + v.getCliente().getIdCliente() + "  " + v.getProducto().getId() + "   " + v.getPrecioVenta();
+                res += "\n ID VENTA VENDEDOR  CLIENTE PRODUCTO PRECIO VENTA" + "\n" + v.getIdVenta() + "   " + v.getVendedor() + "   " + v.getCliente().getIdCliente() + "  " + v.getProducto().getId() + "   " + v.getPrecioVenta();
                 int idv = v.getIdVenta();
                 String idventa = Integer.toString(idv);
-                res += "\n ID VENTA VENDEDOR  CLIENTE PRODUCTO PRECIO VENTA" + "\n" + String.format(idventa, v.getVendedor(), v.getCliente().getIdCliente(), v.getProducto().getId(), v.getPrecioVenta());
+                //res += "\n ID VENTA VENDEDOR  CLIENTE PRODUCTO PRECIO VENTA" + "\n" + String.format(idventa, v.getVendedor(), v.getCliente().getIdCliente(), v.getProducto().getId(), v.getPrecioVenta());
                 System.out.println(v.getIdVenta());
 
             }
